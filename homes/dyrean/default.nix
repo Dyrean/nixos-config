@@ -6,9 +6,7 @@ in
 {
     imports = [
         ./ags.nix
-        ./anyrun.nix
         ./packages.nix
-        ./virtualisation.nix { inherit username; }
         ./sway.nix
         ./theme.nix
     ];

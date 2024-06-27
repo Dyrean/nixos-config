@@ -1,4 +1,4 @@
-{ pkgs, username, ... }: {
+{ pkgs, ... }: {
     # Enable Containerd
 	# virtualisation.containerd.enable = true;
 
@@ -8,7 +8,6 @@
 		enable = true;
 		setSocketVariable = true;
 	};
-	users.extraGroups.docker.members = [ "${username}" ];
 
 	# Enable Podman
 	# virtualisation = {
@@ -20,21 +19,4 @@
 	# 		defaultNetwork.settings.dns_enabled = true;
 	# 	};
 	# };
-
-	environment.systemPackages = with pkgs; [
-		# nerdctl
-
-		# firecracker
-		# firectl
-		# flintlock
-
-		# distrobox
-		# qemu
-
-		# podman-compose
-		# podman-tui
-
-		lazydocker
-		docker-credential-helpers
-	];
 }

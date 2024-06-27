@@ -54,6 +54,8 @@
             oh-my-posh
             zoxide
             lazygit
+            lazydocker
+    		docker-credential-helpers
 
             # theming tools
             gradience

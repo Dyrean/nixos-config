@@ -6,5 +6,6 @@
         ./gnome.nix
         ./dns.nix
         ./locale.nix
+        ./virtualisation.nix
     ];
 }

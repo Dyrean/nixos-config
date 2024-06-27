@@ -30,11 +30,7 @@
 
         nix-ld.enable = true;
 
-        direnv = {
-            enable = true; 
-            enableBashIntegration = true;
-            enableZshIntegration = true;
-        };
+        direnv.enable = true; 
     };
 
     # Enable CUPS to print documents.
