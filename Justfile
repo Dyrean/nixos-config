@@ -7,20 +7,20 @@ set shell := ["zsh", "-c"]
 
 # nixos rebuild flake host=HOSTNAME
 deploy:
-	cd nixos ; sudo nixos-rebuild switch --flake .
+	sudo nixos-rebuild switch --flake .
 
 # nixos rebuild flake with debug
 debug:
-	cd nixos ; sudo nixos-rebuild switch --flake . --show-trace --print-build-logs --verbose
+	sudo nixos-rebuild switch --flake . --show-trace --print-build-logs --verbose
 
 # update all the flake inputs
 up:
-	cd nixos ; sudo nix flake update
+	sudo nix flake update
 
 # update specific input
 # usage: just nixos-upp nixpkgs
 upp input:
-	cd nixos ; sudo nix flake update {{input}}
+	sudo nix flake update {{input}}
 
 # list all nixos generations of the system profile
 history:
@@ -34,3 +34,11 @@ clean:
 gc:
 	sudo nix store gc --debug
 	sudo nix-collect-garbage --delete-old
+
+# stow the dotfile input to target ~
+stow input:
+    cd dotfiles ; stow -vt ~ {{input}}
+
+# stow the dotfiles to target ~
+stow-all:
+    cd dotfiles ; stow -vt ~ *

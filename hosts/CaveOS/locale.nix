@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{ ... }: {
 	# Configure keymap in X11
 	services.xserver = {
 		xkb.layout = "tr";
@@ -27,9 +25,4 @@
 		LC_TELEPHONE = "tr_TR.UTF-8";
 		LC_TIME = "tr_TR.UTF-8";
 	};
-
-
-	environment.systemPackages = with pkgs; [
-		nuspell
-	];
 }

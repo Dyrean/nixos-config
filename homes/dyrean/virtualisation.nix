@@ -1,7 +1,5 @@
-{ pkgs, ... }:
-
-{
-	# Enable Containerd
+{ pkgs, username, ... }: {
+    # Enable Containerd
 	# virtualisation.containerd.enable = true;
 
 	# Enable Docker
@@ -10,7 +8,7 @@
 		enable = true;
 		setSocketVariable = true;
 	};
-	users.extraGroups.docker.members = [ "dyrean" ];
+	users.extraGroups.docker.members = [ "${username}" ];
 
 	# Enable Podman
 	# virtualisation = {
