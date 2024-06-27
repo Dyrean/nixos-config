@@ -5,7 +5,6 @@ let
 in
 {
     imports = [
-        ./ags.nix
         ./packages.nix
         ./sway.nix
         ./theme.nix

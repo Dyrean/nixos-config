@@ -1,7 +1,7 @@
 {
     description = "Dyrean's NixOS Configuration";
 
-    outputs = { self, ... }:
+    outputs = { self, home-manager, ... }:
     let
         hostname = "CaveOS";
         username = "dyrean";
@@ -10,7 +10,7 @@
         # editing flake.nix triggers certain utilities such as direnv
         # to reload - editing host configurations do not require a direnv
         # reload, so lets move hosts out of the way
-        nixosConfigurations = import ./hosts { inherit self; inherit hostname; inherit username; };
+        nixosConfigurations = import ./hosts { inherit self; inherit hostname; inherit username; inherit home-manager; };
     };
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -20,8 +20,6 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        stylix.url = "github:danth/stylix";
-
         thorium.url = "github:end-4/nix-thorium";
 
         hyprland.url = "github:hyprwm/Hyprland";
@@ -29,8 +27,6 @@
             url = "github:hyprwm/hyprland-plugins";
             # inputs.nixpkgs.follows = "hyprland";
         };
-
-        ags.url = "github:Aylur/ags";
 
         flake-parts = {
             url = "github:hercules-ci/flake-parts";
@@ -41,11 +37,6 @@
             url = "github:fufexan/gross";
             inputs.nixpkgs.follows = "nixpkgs";
             inputs.flake-parts.follows = "flake-parts";
-        };
-
-        matugen = {
-            url = "github:/InioX/Matugen";
-            # ref = "refs/tags/matugen-v0.10.0"
         };
 
         more-waita = {

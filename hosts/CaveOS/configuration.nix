@@ -60,11 +60,11 @@
             git
             gh
             vim
-            nvim
+            neovim
 
             wget
             nixpkgs-fmt
-            nixfmt
+            nixfmt-classic
 
             gcc14
             mold
@@ -80,8 +80,6 @@
             wlrctl
             coreutils-full
             gnutar
-
-            inputs.home-manager.packages.${pkgs.system}.home-manager
         ];
     };
 

@@ -7,7 +7,6 @@
             gnumake
             cmake
             gcc14
-            gcc
 
             # gui
             blueberry
@@ -96,7 +95,6 @@
             nixd
             clang-tools #C
             gopls #Golang
-            rust-analyzer #Rust
             vscode-langservers-extracted #HTML,CSS, JSON
             typescript-language-server #Javascript and Typescript
             bash-language-server #Bash

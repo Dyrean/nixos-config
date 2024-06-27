@@ -1,4 +1,4 @@
-{ self, hostname, username, ... }:
+{ self, hostname, username, home-manager, ... }:
 let
     inherit (self) inputs;
     inherit (inputs) nixpkgs home-manager;
@@ -19,6 +19,7 @@ in
         specialArgs = { inherit inputs; inherit hostname; inherit username; };
         modules =
         [
+            home-manager.nixosModules.home-manager
             ./${hostname}
 
             # this part is basically the same as putting configuration in your
